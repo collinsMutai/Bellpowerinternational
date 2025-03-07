@@ -1,0 +1,133 @@
+.about-container {
+  padding: 2rem;
+  background-image: url('/assets/bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+  padding: 1rem;
+}
+
+.left-column {
+  flex: 1;
+}
+
+.right-column {
+  flex: 1;
+}
+
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  line-height: 1;
+  color: #657078;
+}
+
+.title {
+  font-size: 57px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.05em !important;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #657078;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.contact-button {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22px;
+  border: 3px solid #e1e4e6;
+  border-radius: 25px;
+  padding: 12px 25px;
+  background-color: #02010100;
+  color: #657078;
+  fill: #657078;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 1.5rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-button svg {
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  transform: rotate(320deg);
+  color: #FF6422;
+}
+
+.service {
+  margin-bottom: 2rem;
+}
+
+.service-subtitle {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.service-border {
+  position: relative;
+  height: 2px;
+  background-color: #F4F7F9;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.service-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 100%;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1 100%;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .right-column {
+    order: 2;
+  }
+}
