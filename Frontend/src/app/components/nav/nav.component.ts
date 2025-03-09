@@ -1,12 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
+  menuOpen = false;
 
+  // Method to toggle the mobile menu visibility
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
 }

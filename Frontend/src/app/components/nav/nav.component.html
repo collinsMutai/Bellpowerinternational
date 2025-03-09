@@ -1,12 +1,18 @@
-<!-- nav.component.html -->
+<!-- Top Navigation -->
 <nav class="top-nav">
- <div class="top-nav-left">
-  <span class="contact-info">
-    <span class="contact-phone">Call us today: <a href="tel:+1234567890">+254 456 7890</a></span>
-    <span class="contact-email"> Email: <a href="mailto:info&#64;bellpowerinternational.com">info&#64;bellpowerinternational.com</a></span>
-  </span>
-</div>
-
+  <div class="top-nav-left">
+    <span class="contact-info">
+      <span class="contact-phone">
+        Call us today: <a href="tel:+1234567890">+254 456 7890</a>
+      </span>
+      <span class="contact-email">
+        Email:
+        <a href="mailto:info@bellpowerinternational.com"
+          >info&#64;bellpowerinternational.com</a
+        >
+      </span>
+    </span>
+  </div>
 
   <div class="top-nav-right">
     <a href="#" class="social-icon">
@@ -74,3 +80,67 @@
     </a>
   </div>
 </nav>
+
+<!-- Main Navigation -->
+<nav class="main-nav">
+  <div class="logo">
+    <a href="#">Bell Power International</a>
+  </div>
+  <ul class="menu-links" [class.mobile-menu]="menuOpen">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+
+  <!-- Menu toggle icon for mobile -->
+  <svg
+    *ngIf="!menuOpen"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="icon icon-tabler icon-tabler-menu-2 menu-toggle"
+    (click)="toggleMenu()"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M4 6l16 0" />
+    <path d="M4 12l16 0" />
+    <path d="M4 18l16 0" />
+  </svg>
+  <svg
+    *ngIf="menuOpen"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-x menu-toggle"
+    (click)="toggleMenu()"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M18 6l-12 12" />
+    <path d="M6 6l12 12" />
+  </svg>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" *ngIf="menuOpen">
+  <ul class="menu-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+</div>

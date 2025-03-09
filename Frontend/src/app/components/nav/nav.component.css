@@ -1,3 +1,4 @@
+/* Original Top Navigation Styles */
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -54,6 +55,73 @@
   transform: scale(1.1);
 }
 
+/* Main Navigation Styles */
+.main-nav {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .logo {
+  padding-left: 100px; /* Add space on the left */
+}
+
+.main-nav .logo a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #000;
+}
+
+.main-nav .logo a:hover {
+  color: #ff6422; /* Highlight color on hover */
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li {
+  margin: 0 20px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #000; /* Black text */
+  font-size: 16px;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+
+.mobile-menu ul{
+  background-color: #1C242A;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #fff; /* Black text */
+  font-size: 12px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #ff6422; /* Highlight color on hover */
+}
+
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
   .top-nav {
@@ -67,22 +135,57 @@
     margin-bottom: 10px;
   }
 
-  /* Stack phone number and email vertically on mobile */
   .contact-info {
     flex-direction: column; /* Stack elements vertically on mobile */
     text-align: left;
     margin-bottom: 10px;
   }
 
-  /* Ensure the individual spans are stacked */
-  .contact-phone,
-  .contact-email {
-    display: block; /* Stack each span block-level on mobile */
-    margin-bottom: 5px; /* Add space between phone and email */
-  }
-
   .top-nav-right {
     display: none; /* Hide social icons */
+  }
+
+  .main-nav {
+    flex-direction: row; /* Align logo and menu toggle horizontally */
+    justify-content: space-between; /* Spread out logo and toggle */
+    align-items: center; /* Align logo and toggle vertically centered */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-nav .logo {
+    margin-right: auto; /* Push the logo to the left */
+    padding-left: 0px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Hide menu links by default */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the menu icon on mobile */
+    cursor: pointer;
+    margin-left: auto; /* Align SVG to the right */
+    color: #000 !important;
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  /* Show the menu links when menuOpen is true */
+  .mobile-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
   }
 }
 
@@ -94,6 +197,7 @@
   .top-nav-left {
     margin-bottom: 0px;
   }
+
   .contact-info {
     margin-bottom: 0px;
   }
