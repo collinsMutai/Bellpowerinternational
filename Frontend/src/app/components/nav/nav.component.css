@@ -1,0 +1,100 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff6422;
+  color: #fff;
+  padding: 10px 100px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.top-nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info {
+  font-size: 14px;
+  display: flex; /* Flexbox for inline layout */
+  align-items: center;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none !important;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 14px;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.top-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  margin-left: 20px;
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    padding: 5px 15px; /* Reduced padding for mobile */
+  }
+
+  .top-nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  /* Stack phone number and email vertically on mobile */
+  .contact-info {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  /* Ensure the individual spans are stacked */
+  .contact-phone,
+  .contact-email {
+    display: block; /* Stack each span block-level on mobile */
+    margin-bottom: 5px; /* Add space between phone and email */
+  }
+
+  .top-nav-right {
+    display: none; /* Hide social icons */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 10px;
+  }
+
+  .top-nav-left {
+    margin-bottom: 0px;
+  }
+  .contact-info {
+    margin-bottom: 0px;
+  }
+}
