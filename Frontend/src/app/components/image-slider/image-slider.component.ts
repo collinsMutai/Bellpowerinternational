@@ -78,4 +78,12 @@ export class ImageSliderComponent implements OnInit, AfterViewInit {
       this.changeSlide(1); // Move to the next slide
     }, 3000); // Change slide every 3 seconds (3000ms)
   }
+
+  // Scroll to the contact section when the button is clicked
+  scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

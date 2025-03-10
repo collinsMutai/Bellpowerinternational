@@ -88,10 +88,10 @@
   </div>
   <ul class="menu-links" [class.mobile-menu]="menuOpen">
     <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
+    <li><a href="#about">About Us</a></li>
     <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+   
   </ul>
 
   <!-- Menu toggle icon for mobile -->
@@ -137,10 +137,10 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" *ngIf="menuOpen">
   <ul class="menu-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Blog</a></li>
+    <li><a href="/" (click)="closeMenuAndNavigate('/')">Home</a></li>
+    <li><a href="#about" (click)="closeMenuAndNavigate('about')">About Us</a></li>
+    <li><a href="#services" (click)="closeMenuAndNavigate('services')">Services</a></li>
+    <li><a href="#contact" (click)="closeMenuAndNavigate('contact')">Contact</a></li>
+    <li><a href="#blog" (click)="closeMenuAndNavigate('blog')">Blog</a></li>
   </ul>
 </div>
