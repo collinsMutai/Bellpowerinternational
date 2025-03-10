@@ -130,6 +130,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .caption {
+    top: 40%;
     padding: 15px;
     width: 80%; /* Slightly wider caption on mobile */
   }
@@ -140,10 +141,12 @@
 
   .title {
     font-size: 24px;
+    line-height: 34px;
   }
 
   .cta-button {
     font-size: 10px;
     padding: 10px 20px;
+    margin-top: .8rem;
   }
 }

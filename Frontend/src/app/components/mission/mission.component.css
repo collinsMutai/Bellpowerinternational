@@ -1,0 +1,206 @@
+/* Mission container */
+.mission-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 100px;
+  padding-right: 0px;
+  margin-right: 0px;
+  overflow: hidden;
+}
+
+.left-column,
+.right-column {
+  padding: 1rem;
+}
+
+.left-column {
+  flex: 1;
+}
+
+.right-column {
+  flex: 1;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  line-height: 1;
+  color: #657078;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.title {
+  font-size: 57px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.05em;
+  text-align: left;
+  margin-top: 1rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #657078;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.mission-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.mission-list li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.check-icon svg {
+  fill: none;
+  stroke: #ff6422;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Flex container for images */
+.image-container {
+  margin-right: 0px;
+  padding-right: 0px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: nowrap; /* Prevent images from wrapping */
+  justify-content: flex-start; /* Align images to the left */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+  align-items: center; /* Vertically center all images */
+}
+
+.image-1,
+.image-2,
+.image-3,
+.image-4 {
+  object-fit: cover;
+  max-width: 48%;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px; /* New border-radius for images */
+}
+
+.image-2,
+.image-4 {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.image-1 {
+  height: 315px;
+}
+
+.image-2 {
+  height: 240px;
+}
+
+.image-3 {
+  height: 237px;
+}
+
+.image-4 {
+  height: 320px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .mission-container {
+    padding: 20px;
+    padding-right: 0px;
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1 100%;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .right-column {
+    order: 2;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 42px;
+    max-width: 90%;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+  }
+
+  /* Flex container for images */
+  .image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-x: hidden; /* Prevent horizontal scrolling on mobile */
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 20px; /* Add gap between top and bottom rows of images */
+  }
+
+  .image-1,
+  .image-2,
+  .image-3,
+  .image-4 {
+    object-fit: cover; /* Ensure the images cover the area */
+    max-width: 100%; /* Ensure images take full width */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+    border-radius: 15px; /* Border-radius for images on mobile */
+  }
+
+  /* Specific height for mobile devices */
+  .image-1 {
+    height: 158px; /* Adjusted height for mobile */
+  }
+
+  .image-2 {
+    height: 118px; /* Adjusted height for mobile */
+  }
+
+  .image-3 {
+    height: 158px; /* Adjusted height for mobile */
+  }
+
+  .image-4 {
+    height: 118px; /* Adjusted height for mobile */
+  }
+}
