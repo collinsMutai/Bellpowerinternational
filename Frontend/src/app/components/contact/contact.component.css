@@ -1,0 +1,241 @@
+/* Contact container */
+.contact-container {
+  display: flex;
+  flex-direction: column; /* Stack the top and bottom columns vertically */
+  gap: 20px;
+  padding: 20px 100px;
+  overflow: hidden;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Top Column for Contact Information */
+.left-column {
+  width: 100%; /* Full width for the top column */
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.title {
+  font-size: 50px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.05em !important;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #657078;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Card styling for contact items inline */
+.contact-info-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto the next line if needed */
+  gap: 20px; /* Space between the cards */
+  margin-top: 60px !important;
+}
+
+.contact-info-list li {
+  color: #657078 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px; /* Increase padding inside the card for more space */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%; /* Each card takes up 30% of the container width */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  min-height: 250px; /* Set minimum height to increase the card height */
+  height: auto; /* Allows card height to adjust dynamically */
+}
+
+.contact-info-list li span {
+  margin-right: 10px;
+  color: #ff6422;
+}
+
+.contact-info-list li strong {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.contact-info-list li span svg {
+  height: 100px; /* Increased size */
+  width: 100px; /* Increased size */
+  background-color: #f1f1f1; /* Light grey background for the icon */
+  padding: 15px; /* Adjusted padding for the larger size */
+  border-radius: 50%; /* Circular background */
+}
+
+/* Bottom Column for Contact Form */
+.right-column {
+  width: 100%; /* Full width for the bottom column */
+  max-width: 800px;
+  margin: 0 auto; /* Center the form */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px; /* Increased padding inside the inputs and textarea */
+  margin-top: 5px;
+  border: none; /* Remove the border */
+  background-color: #f0f0f0; /* Grey background */
+  border-radius: 4px;
+  font-size: 16px; /* Font size for better readability */
+}
+
+textarea {
+  height: 120px; /* Increase the height of the textarea */
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #657078; /* Placeholder text color */
+  font-size: 16px;
+}
+
+button {
+  max-width: 120px;
+  width: 100%;
+  padding: 12px 22px;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #ff6422;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 20px 40px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%; /* Ensure full width for both columns on medium screens */
+  }
+
+  .right-column {
+    max-width: 100%; /* Remove the max-width to allow the form to take full width */
+  }
+
+  .contact-info-list {
+    flex-direction: column; /* Stack the contact items vertically on medium screens */
+  }
+
+  .contact-info-list li {
+    width: 100%; /* Cards take up full width on medium screens */
+  }
+
+  .title {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%; /* Ensure full width for both columns on smaller screens */
+  }
+
+  .right-column {
+    max-width: 100%; /* Remove the max-width to allow the form to take the full width */
+  }
+
+  .contact-info-list {
+    flex-direction: column; /* Stack the contact items vertically on smaller screens */
+  }
+
+  .contact-info-list li {
+    width: 100%; /* Cards take up full width on small screens */
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .contact-info-list li span svg {
+    width: 80px; /* Adjust SVG icon size for mobile */
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .contact-info-list li {
+    padding: 15px; /* Decrease padding for smaller screens */
+  }
+
+  .contact-info-list li span svg {
+    width: 60px; /* Further reduce the SVG icon size on very small screens */
+    height: 60px;
+  }
+
+  .form-group label {
+    font-size: 14px; /* Smaller label font on mobile */
+  }
+
+  input,
+  textarea,
+  button {
+    padding: 10px; /* Increase padding on form elements for easier interaction */
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
