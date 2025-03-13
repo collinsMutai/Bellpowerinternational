@@ -1,0 +1,50 @@
+<div class="portfolio-container">
+  <h3 class="title">Projects</h3>
+  <p class="about-text">
+     Projects owned and being developed by Bell Power International
+    </p>
+  <div class="grid">
+    <div class="card" *ngFor="let project of projects">
+      <img
+        [src]="project.image"
+        alt="{{ project.title }}"
+        class="project-image"
+      />
+      <div class="card-body">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+       
+         <button class="cta-button" (click)="openModal(project)">
+          View Project
+          <!-- New SVG icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l14 0" />
+            <path d="M15 16l4 -4" />
+            <path d="M15 8l4 4" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for project details -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">×</span>
+      <h2>{{ selectedProject?.title }}</h2>
+      <p>{{ selectedProject?.details }}</p>
+    </div>
+  </div>
+</div>
