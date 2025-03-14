@@ -181,12 +181,46 @@
   width: 80%; /* Set modal width to 80% of the viewport width */
   max-height: 80%; /* Limit the height of the modal to 80% of the viewport */
   overflow-y: auto; /* Allow scrolling if the content exceeds the max height */
+  text-align: center; /* Center-align the content */
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 10px;
+  z-index: 1010; /* Ensure close button is above modal content */
+}
+
+.close svg {
+  width: 30px;
+  height: 30px;
+  stroke: #333; /* Set color of the "X" icon */
+  transition: transform 0.3s ease;
+}
+
+.close:hover svg {
+  transform: rotate(90deg); /* Add rotation on hover for a better effect */
+}
+
+.modal-image {
+  width: 100%; /* Ensure image takes full width of the modal */
+  height: auto; /* Maintain aspect ratio of the image */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space between image and text */
+}
+
+.modal h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.5;
 }

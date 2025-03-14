@@ -1,8 +1,9 @@
 <div class="portfolio-container">
   <h3 class="title">Projects</h3>
   <p class="about-text">
-     Projects owned and being developed by Bell Power International
-    </p>
+    Projects owned and being developed by Bell Power International
+  </p>
+  
   <div class="grid">
     <div class="card" *ngFor="let project of projects">
       <img
@@ -13,8 +14,7 @@
       <div class="card-body">
         <h3>{{ project.title }}</h3>
         <p>{{ project.description }}</p>
-       
-         <button class="cta-button" (click)="openModal(project)">
+        <button class="cta-button" (click)="openModal(project)">
           View Project
           <!-- New SVG icon -->
           <svg
@@ -42,8 +42,20 @@
   <!-- Modal for project details -->
   <div class="modal" *ngIf="showModal">
     <div class="modal-content">
-      <span class="close" (click)="closeModal()">×</span>
+      <!-- Close Button with SVG -->
+      <button class="close" (click)="closeModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Project Image -->
+      <img [src]="selectedProject?.image" alt="{{ selectedProject?.title }}" class="modal-image" />
+
+      <!-- Project Title -->
       <h2>{{ selectedProject?.title }}</h2>
+      
+      <!-- Project Description -->
       <p>{{ selectedProject?.details }}</p>
     </div>
   </div>
