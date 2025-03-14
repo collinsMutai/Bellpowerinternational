@@ -32,8 +32,8 @@ export class PortfolioComponent {
 
   // Show the modal with project details
   openModal(project: any) {
-    this.selectedProject = project;
-    this.showModal = true;
+    // this.selectedProject = project;
+    // this.showModal = true;
   }
 
   // Close the modal
