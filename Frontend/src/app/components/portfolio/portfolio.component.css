@@ -277,3 +277,11 @@
     font-size: 1em; /* Adjust description font size for mobile */
   }
 }
+
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
