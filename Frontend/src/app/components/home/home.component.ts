@@ -7,6 +7,7 @@ import { ContactComponent } from "../contact/contact.component";
 import { FooterComponent } from '../footer/footer.component';
 import { PortfolioComponent } from "../portfolio/portfolio.component";
 import { CommonModule } from '@angular/common';
+import { ImageGalleryComponent } from "../image-gallery/image-gallery.component";
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,9 @@ import { CommonModule } from '@angular/common';
     ContactComponent,
     FooterComponent,
     PortfolioComponent,
-    CommonModule
-  ],
+    CommonModule,
+    ImageGalleryComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

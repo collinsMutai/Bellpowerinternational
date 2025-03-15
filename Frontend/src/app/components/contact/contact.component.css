@@ -198,6 +198,11 @@ button:disabled {
   .title {
     font-size: 32px;
     line-height: 42px;
+    text-align: left;
+  }
+
+  .about-text{
+    text-align: left;
   }
 
   .contact-info-list li span svg {

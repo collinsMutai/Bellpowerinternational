@@ -1,0 +1,89 @@
+/* Wrapper to contain the header and gallery */
+.gallery-wrapper {
+  display: block;  /* Ensures everything is stacked vertically */
+  text-align: center; /* Centers the text (optional, you can remove if not needed) */
+  padding: 40px 100px; /* Padding for the parent container */
+}
+
+/* Gallery container with 3 images per row by default */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 20px; /* Space between images */
+}
+
+/* Title and Subtitle Styling */
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  line-height: 1;
+  color: #657078;
+  margin-top: 0;
+}
+
+.title {
+  font-size: 57px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.05em !important;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 60px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Adjust layout for mobile devices (1 image per row) */
+@media (max-width: 768px) {
+    .gallery-wrapper {
+
+  padding: 20px; /* Less padding on smaller screens */
+}
+
+  .gallery-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 image per row on small screens */
+  }
+  .title {
+    font-size: 32px;
+    line-height: 42px;
+    max-width: 90%;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 18px;
+    text-align: left;
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+  }
+}
+
+/* Gallery item styling */
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 250px; /* Set a fixed height for each image item */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-image {
+  width: 100%; /* Ensure the image spans the entire width of the container */
+  height: 100%; /* Ensure the image takes up the height of the container */
+  object-fit: cover; /* Crop and fill the container */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Add some basic styling for hover effect */
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
