@@ -39,24 +39,28 @@
     </div>
   </div>
 
-  <!-- Modal for project details -->
-  <div class="modal" *ngIf="showModal">
-    <div class="modal-content">
-      <!-- Close Button with SVG -->
-      <button class="close" (click)="closeModal()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <!-- Close Button with SVG -->
+    <button class="close" (click)="closeModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
 
+    <div class="modal-body">
       <!-- Project Image -->
       <img [src]="selectedProject?.image" alt="{{ selectedProject?.title }}" class="modal-image" />
 
-      <!-- Project Title -->
-      <h2>{{ selectedProject?.title }}</h2>
-      
-      <!-- Project Description -->
-      <p>{{ selectedProject?.details }}</p>
+      <!-- Project Content -->
+      <div class="modal-text">
+        <h2>{{ selectedProject?.title }}</h2>
+        <p>{{ selectedProject?.description }}</p>
+        <p>{{ selectedProject?.details }}</p>
+      </div>
     </div>
   </div>
+</div>
+
+
 </div>
