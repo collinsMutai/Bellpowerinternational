@@ -44,7 +44,7 @@
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 20px;
-    right: 35px;
+    right: 20px;
     font-size: 16px;
     padding: 12px; /* Adjusted padding for mobile view */
   }
