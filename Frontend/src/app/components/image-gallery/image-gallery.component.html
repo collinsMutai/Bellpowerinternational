@@ -1,16 +1,23 @@
+<app-banner
+  [backgroundImageUrl]="'/assets/project_kiwira.webp'"
+  [title]="'Gallery'"
+  [breadcrumbs]="['Home', 'Gallery']"
+>
+</app-banner>
+
 <div class="gallery-wrapper" id="gallery">
   <!-- Title and Subtitle Section -->
-  <h3 class="subtitle">Our</h3>
-  <h1 class="title">Image Gallery</h1>
+  <!-- <h3 class="subtitle">Our</h3>
+  <h1 class="title">Image Gallery</h1> -->
 
   <!-- Gallery Container -->
   <div class="gallery-container">
-    <div
-      *ngFor="let image of images"
-      class="gallery-item"
-      [@fadeInAnimation]
-    >
+    <div *ngFor="let image of images" class="gallery-item">
       <img [src]="image.src" alt="Gallery Image" class="gallery-image" />
+      <!-- Only show the description if it exists -->
+      <div *ngIf="image.description" class="description">
+        {{ image.description }}
+      </div>
     </div>
   </div>
 </div>

@@ -1,15 +1,15 @@
 /* Wrapper to contain the header and gallery */
 .gallery-wrapper {
-  display: block;  /* Ensures everything is stacked vertically */
-  text-align: center; /* Centers the text (optional, you can remove if not needed) */
-  padding: 40px 100px; /* Padding for the parent container */
+  display: block;
+  text-align: center;
+  padding: 40px 100px;
 }
 
 /* Gallery container with 3 images per row by default */
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-  gap: 20px; /* Space between images */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 /* Title and Subtitle Styling */
@@ -39,22 +39,22 @@
 
 /* Adjust layout for mobile devices (1 image per row) */
 @media (max-width: 768px) {
-    .gallery-wrapper {
-
-  padding: 20px; /* Less padding on smaller screens */
-}
+  .gallery-wrapper {
+    padding: 20px;
+  }
 
   .gallery-container {
-    grid-template-columns: repeat(1, 1fr); /* 1 image per row on small screens */
+    grid-template-columns: repeat(1, 1fr);
   }
+
   .title {
     font-size: 32px;
     line-height: 42px;
     max-width: 90%;
     text-align: left;
-}
+  }
 
-.subtitle {
+  .subtitle {
     font-size: 18px;
     text-align: left;
     letter-spacing: 1.5px;
@@ -68,22 +68,69 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  height: 250px; /* Set a fixed height for each image item */
+  height: 250px;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+  animation-delay: calc(0.2s * var(--i)); /* Delay based on index */
 }
 
 .gallery-item:hover {
   transform: scale(1.05);
 }
 
+/* Gallery image styling */
 .gallery-image {
-  width: 100%; /* Ensure the image spans the entire width of the container */
-  height: 100%; /* Ensure the image takes up the height of the container */
-  object-fit: cover; /* Crop and fill the container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-/* Optional: Add some basic styling for hover effect */
+/* Hover effect on the gallery item image */
 .gallery-item:hover .gallery-image {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
+}
+
+/* Keyframe Animation to fade in the gallery items */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Positioning the description inside the gallery item */
+.gallery-item .description {
+  position: absolute;
+  bottom: 10px; /* Position the description at the bottom */
+  left: 10px; /* Position the description at the left */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 1; /* Make the description always visible */
+}
+
+/* This is a workaround to introduce delays for each item in the gallery */
+.gallery-container .gallery-item:nth-child(1) {
+  --i: 0;
+}
+.gallery-container .gallery-item:nth-child(2) {
+  --i: 1;
+}
+.gallery-container .gallery-item:nth-child(3) {
+  --i: 2;
+}
+.gallery-container .gallery-item:nth-child(4) {
+  --i: 3;
+}
+.gallery-container .gallery-item:nth-child(5) {
+  --i: 4;
+}
+.gallery-container .gallery-item:nth-child(6) {
+  --i: 5;
 }

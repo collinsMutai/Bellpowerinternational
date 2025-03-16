@@ -1,0 +1,78 @@
+/* Banner styles */
+.banner {
+  position: relative;
+  height: 300px;  /* Adjust the height as needed */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dark overlay */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+  z-index: 1; /* Position the overlay behind the content */
+}
+
+/* Banner content (title, breadcrumbs) */
+.banner-content {
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Title styling */
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Breadcrumbs styling */
+.breadcrumbs {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  color: white;
+}
+
+/* Chevron icon styling */
+.chevron-icon {
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;  /* Inherit the color from the text */
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .breadcrumbs {
+    font-size: 14px;
+  }
+}

@@ -27,14 +27,5 @@ import { ImageGalleryComponent } from "../image-gallery/image-gallery.component"
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  showScroll = false;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll(): void {
-    this.showScroll = window.scrollY > 200;
-  }
-
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }
