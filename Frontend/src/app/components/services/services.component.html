@@ -1,0 +1,52 @@
+<div class="about-container" id="services">
+  <!-- Header text -->
+  <div class="services-header">
+    <h3 class="subtitle">Our</h3>
+    <h1 class="title">Services</h1>
+    <div class="about-text">
+      Hydro electromechanical and electrical components supplier such as the
+      turbines and its accessories etc.
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="row">
+    <!-- Left Column: Hydro Turbines -->
+    <div class="service left-column">
+      <img
+        src="assets/Hydromechanicalequipments/hydromechanicalequipment_gallery2.jpeg"
+        alt="Hydro Turbines"
+        class="service-image"
+      />
+      <div>
+        <div class="service-title">Hydro Electromechanical Equipment</div>
+        <p class="about-text">
+          We supply high-quality hydro turbines for various hydropower projects.
+          Our turbines are durable, efficient, and designed for long-term
+          performance.
+        </p>
+        <a [routerLink]="['/gallery', 'Hydromechanical']" class="view-more"
+          >View More</a
+        >
+      </div>
+    </div>
+
+    <!-- Right Column: Electrical Components -->
+    <div class="service right-column">
+      <img
+        src="assets/Electricalcomponents/electricalcomponentsgallery4.jpeg"
+        alt="Electrical Components"
+        class="service-image"
+      />
+      <div class="service-title">Electrical Components</div>
+      <p class="about-text">
+        We provide electrical components such as switchgears, transformers, and
+        circuit breakers, ensuring high performance and safety in electrical
+        systems.
+      </p>
+      <a [routerLink]="['/gallery', 'Electrical']" class="view-more"
+        >View More</a
+      >
+    </div>
+  </div>
+</div>

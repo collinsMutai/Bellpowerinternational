@@ -8,6 +8,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { PortfolioComponent } from "../portfolio/portfolio.component";
 import { CommonModule } from '@angular/common';
 import { ImageGalleryComponent } from "../image-gallery/image-gallery.component";
+import { ServicesComponent } from "../services/services.component";
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ import { ImageGalleryComponent } from "../image-gallery/image-gallery.component"
     FooterComponent,
     PortfolioComponent,
     CommonModule,
-    ImageGalleryComponent
+    ImageGalleryComponent,
+    ServicesComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

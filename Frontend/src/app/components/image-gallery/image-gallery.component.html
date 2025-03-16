@@ -6,18 +6,47 @@
 </app-banner>
 
 <div class="gallery-wrapper" id="gallery">
-  <!-- Title and Subtitle Section -->
-  <!-- <h3 class="subtitle">Our</h3>
-  <h1 class="title">Image Gallery</h1> -->
-
-  <!-- Gallery Container -->
-  <div class="gallery-container">
-    <div *ngFor="let image of images" class="gallery-item">
-      <img [src]="image.src" alt="Gallery Image" class="gallery-image" />
-      <!-- Only show the description if it exists -->
-      <div *ngIf="image.description" class="description">
-        {{ image.description }}
+  <!-- Show all images (if no section is selected) or images without descriptions -->
+  <div class="gallery-container" *ngIf="!section">
+    <ng-container *ngFor="let image of images">
+      <div class="gallery-item">
+        <img [src]="image.src" alt="Gallery Image" class="gallery-image" />
+        <div *ngIf="image.description" class="description">
+          {{ image.description }}
+        </div>
       </div>
-    </div>
+    </ng-container>
+  </div>
+
+  <!-- Electrical Components Gallery Section -->
+  <div class="gallery-container" *ngIf="section === 'Electrical'">
+    <ng-container *ngFor="let image of filteredImages">
+      <div *ngIf="image.description === 'Electrical component'" class="gallery-item">
+        <img
+          [src]="image.src"
+          alt="Electrical Component"
+          class="gallery-image"
+        />
+        <div *ngIf="image.description" class="description">
+          {{ image.description }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Hydro Mechanical Equipment Gallery Section -->
+  <div class="gallery-container" *ngIf="section === 'Hydromechanical'">
+    <ng-container *ngFor="let image of filteredImages">
+      <div *ngIf="image.description === 'Hydro mechanical equipment'" class="gallery-item">
+        <img
+          [src]="image.src"
+          alt="Hydro Mechanical Equipment"
+          class="gallery-image"
+        />
+        <div *ngIf="image.description" class="description">
+          {{ image.description }}
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>

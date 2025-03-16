@@ -1,0 +1,150 @@
+/* Container for the whole services section */
+.about-container {
+  padding: 40px 100px;
+}
+
+/* Flexbox row for the layout */
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+/* Left and Right columns */
+.left-column,
+.right-column {
+  padding: 1rem;
+  width: 50%; /* Ensure each column takes up full width */
+  box-sizing: border-box; /* Prevent padding from affecting the width */
+}
+
+/* Styling for the subtitle */
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  line-height: 1;
+  color: #657078;
+  text-align: center;
+}
+
+/* Styling for the title */
+.title {
+  font-size: 57px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.05em !important;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Text styling for descriptions */
+.about-text {
+  font-size: 16px;
+  line-height: 28px;
+  color: #657078;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.service-border {
+  position: relative;
+  height: 2px;
+  background-color: #f4f7f9;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.service-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 100%;
+  background-color: #000;
+}
+
+/* Add styling for images inside each service column */
+.service-image {
+  width: 300px; /* Make the image take up full width of the container */
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: block;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* View More Link Styling */
+.view-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 16px;
+  color: #ff6422;
+  text-decoration: none;
+  text-align: center;
+  width: 100%; /* Ensure it takes full width of its parent container */
+}
+
+.service > .view-more {
+  text-align: center; /* Align the link inside the service div */
+}
+
+.view-more:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design: Stack columns on smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1 100%; /* Ensure columns take full width in smaller screens */
+    width: 100%;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .right-column {
+    order: 2;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 42px;
+    max-width: 90%;
+  }
+
+  .service-image {
+    width: 200px; /* Make the image take up full width of the container */
+    height: 200px;
+  }
+}

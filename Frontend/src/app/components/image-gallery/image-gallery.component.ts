@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { BannerComponent } from "../banner/banner.component";
+import { Component, OnInit } from '@angular/core';
+import { BannerComponent } from '../banner/banner.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-image-gallery',
   standalone: true,
   imports: [CommonModule, BannerComponent],
   templateUrl: './image-gallery.component.html',
-  styleUrl: './image-gallery.component.css',
+  styleUrls: ['./image-gallery.component.css'],
 })
-export class ImageGalleryComponent {
+export class ImageGalleryComponent implements OnInit {
   images = [
     { src: '/assets/gallery1.jpeg' },
     { src: '/assets/gallery2.jpeg' },
@@ -85,10 +86,6 @@ export class ImageGalleryComponent {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery2.jpeg',
       description: 'Electrical component',
     },
-    // {
-    //   src: '/assets/Electricalcomponents/electricalcomponentsgallery3.jpeg',
-    //   description: 'Electrical component',
-    // },
     {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery4.jpeg',
       description: 'Electrical component',
@@ -97,21 +94,45 @@ export class ImageGalleryComponent {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery5.jpeg',
       description: 'Electrical component',
     },
-    // {
-    //   src: '/assets/Electricalcomponents/electricalcomponentsgallery5.jpeg',
-    //   description: 'Electrical component',
-    // },
     {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery6.jpeg',
       description: 'Electrical component',
     },
-    // {
-    //   src: '/assets/Electricalcomponents/electricalcomponentsgallery7.jpeg',
-    //   description: 'Electrical component',
-    // },
     {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery8.jpeg',
       description: 'Electrical component',
     },
   ];
+
+  filteredImages: any[] = [];
+  section: string = '';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    // Capture the section from the route parameter (Electrical or Hydromechanical)
+    this.route.paramMap.subscribe((params) => {
+      this.section = params.get('section') || ''; // Get the section from the URL
+      this.filterImages(); // Filter the images based on the section
+    });
+  }
+
+  filterImages(): void {
+    // If there's no section in the URL or it's empty, show all images (including those with descriptions)
+    if (this.section === '' || this.section === null) {
+      this.filteredImages = this.images;
+      console.log('this.filteredImages', this.filteredImages);
+      
+    } else if (this.section === 'Electrical') {
+      // If the section is "Electrical", show only Electrical components
+      this.filteredImages = this.images.filter(
+        (image) => image.description === 'Electrical component'
+      );
+    } else if (this.section === 'Hydromechanical') {
+      // If the section is "Hydromechanical", show only Hydro mechanical equipment
+      this.filteredImages = this.images.filter(
+        (image) => image.description === 'Hydro mechanical equipment'
+      );
+    }
+  }
 }
