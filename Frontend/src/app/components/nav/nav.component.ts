@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; // Import Router for navigation
+import { Router, RouterLink } from '@angular/router'; // Import Router for navigation
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule], // Import CommonModule for built-in directives like *ngIf, *ngFor
+  imports: [CommonModule, RouterLink], // Import CommonModule for built-in directives like *ngIf, *ngFor
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
 })
