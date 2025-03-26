@@ -81,7 +81,7 @@ export class ImageSliderComponent implements OnInit, AfterViewInit {
 
   // Scroll to the contact section when the button is clicked
   scrollToContact(): void {
-    const contactSection = document.getElementById('contact');
+    const contactSection = document.getElementById('about');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
