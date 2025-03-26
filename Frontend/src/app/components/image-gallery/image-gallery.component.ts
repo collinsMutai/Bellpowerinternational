@@ -68,14 +68,14 @@ export class ImageGalleryComponent implements OnInit {
       src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery8.jpeg',
       description: 'Hydro mechanical equipment',
     },
-    {
-      src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery9.jpeg',
-      description: 'Hydro mechanical equipment',
-    },
-    {
-      src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery10.jpeg',
-      description: 'Hydro mechanical equipment',
-    },
+    // {
+    //   src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery9.jpeg',
+    //   description: 'Hydro mechanical equipment',
+    // },
+    // {
+    //   src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery10.jpeg',
+    //   description: 'Hydro mechanical equipment',
+    // },
     {
       src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery11.jpeg',
       description: 'Hydro mechanical equipment',
@@ -96,14 +96,14 @@ export class ImageGalleryComponent implements OnInit {
       src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery15.jpeg',
       description: 'Hydro mechanical equipment',
     },
-    {
-      src: '/assets/Electricalcomponents/electricalcomponentsgallery1.jpeg',
-      description: 'Electrical component',
-    },
-    {
-      src: '/assets/Electricalcomponents/electricalcomponentsgallery2.jpeg',
-      description: 'Electrical component',
-    },
+    // {
+    //   src: '/assets/Electricalcomponents/electricalcomponentsgallery1.jpeg',
+    //   description: 'Electrical component',
+    // },
+    // {
+    //   src: '/assets/Electricalcomponents/electricalcomponentsgallery2.jpeg',
+    //   description: 'Electrical component',
+    // },
     {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery4.jpeg',
       description: 'Electrical component',
@@ -136,10 +136,10 @@ export class ImageGalleryComponent implements OnInit {
       src: '/assets/solar_power_plant_voi_4.jpeg',
       description: 'Solar power plant in Voi',
     },
-    {
-      src: '/assets/solar_power_plant_voi_5.jpeg',
-      description: 'Solar power plant in Voi',
-    },
+    // {
+    //   src: '/assets/solar_power_plant_voi_5.jpeg',
+    //   description: 'Solar power plant in Voi',
+    // },
   ];
 
   filteredImages: any[] = [];
