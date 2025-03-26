@@ -1,53 +1,105 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
-  ReactiveFormsModule,
   FormBuilder,
   FormGroup,
+  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environments';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule], // Import ReactiveFormsModule to use reactive forms
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RecaptchaModule,
+  ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
-export class ContactComponent {
-  contactForm: FormGroup; // Declare the form group
+export class ContactComponent implements OnInit {
+  contactForm: FormGroup;
+  isSubmitting = false;
+  siteKey: string = environment.recaptchaSiteKey;
+  recaptchaToken: string | null = null;
+  recaptchaFailed = false;
 
-  constructor(private fb: FormBuilder) {
-    // Inject FormBuilder
-    // Initialize form with validation rules
+  userID: string = environment.emailJs.userID;
+  serviceID: string = environment.emailJs.serviceID;
+  templateID: string = environment.emailJs.templateID;
+
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]], // Name is required and at least 3 characters
-      email: ['', [Validators.required, Validators.email]], // Email is required and must be a valid email format
-      message: ['', [Validators.required, Validators.minLength(10)]], // Message is required and at least 10 characters
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      message: ['', [Validators.required]],
     });
   }
 
-  // Getter methods for form controls to simplify the template binding
-  get name() {
-    return this.contactForm.get('name');
-  }
+  ngOnInit(): void {}
 
-  get email() {
-    return this.contactForm.get('email');
-  }
-
-  get message() {
-    return this.contactForm.get('message');
-  }
-
-  // Method to handle form submission
-  onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Form Submitted!', this.contactForm.value);
-      // Here you can send form data to a backend or API
-    } else {
-      console.log('Form is not valid');
-      this.contactForm.markAllAsTouched(); // Mark all fields as touched to trigger validation messages
+  async onSubmit(): Promise<void> {
+    if (this.contactForm.invalid || !this.recaptchaToken) {
+      console.log('Form Invalid');
+      this.recaptchaFailed = !this.recaptchaToken; // Show recaptcha failure message if the token is missing
+      alert('Please fill all the required fields and verify the reCAPTCHA.');
+      return;
     }
+
+    console.log('Form Submitted:', this.contactForm.value);
+    this.isSubmitting = true;
+
+    const formData = this.contactForm.value;
+
+    try {
+      const response: any = await this.http
+        .post(
+          'https://api.emailjs.com/api/v1.0/email/send',
+          {
+            service_id: this.serviceID,
+            template_id: this.templateID,
+            user_id: this.userID,
+            template_params: {
+              from_name: formData.name,
+              from_email: formData.email,
+              from_phone: formData.phone,
+              message: formData.message,
+            },
+          },
+          { responseType: 'text' }
+        )
+        .toPromise();
+
+      console.log('Raw response from EmailJS:', response);
+
+      if (response.includes('OK')) {
+        alert('Message sent successfully!');
+        this.contactForm.reset();
+      } else {
+        console.error('EmailJS Error:', response);
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again later.');
+    }
+  }
+
+  navigateTo(page: string) {
+    const element = document.getElementById(page);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  resolved(captchaResponse: any) {
+    this.recaptchaToken = captchaResponse;
+    this.recaptchaFailed = false;
   }
 }

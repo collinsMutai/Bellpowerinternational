@@ -63,7 +63,7 @@
 
 .contact-info-list li span {
   margin-right: 10px;
-  color: #27548A;
+  color: #27548a;
 }
 
 .contact-info-list li strong {
@@ -128,7 +128,7 @@ button {
   line-height: 22px;
   font-size: 14px;
   font-weight: 600;
-  background-color: #27548A;
+  background-color: #27548a;
   color: white;
   border: none;
   border-radius: 5px;
@@ -139,7 +139,7 @@ button:disabled {
   background-color: #ccc;
 }
 
-.error {
+.text-danger {
   color: red;
   font-size: 12px;
 }
@@ -201,7 +201,7 @@ button:disabled {
     text-align: left;
   }
 
-  .about-text{
+  .about-text {
     text-align: left;
   }
 
