@@ -66,9 +66,9 @@ export class ContactComponent implements OnInit {
             template_id: this.templateID,
             user_id: this.userID,
             template_params: {
-              from_name: formData.name,
-              from_email: formData.email,
-              from_phone: formData.phone,
+              name: formData.name,
+              email: formData.email,
+              phone: formData.phone,
               message: formData.message,
             },
           },
