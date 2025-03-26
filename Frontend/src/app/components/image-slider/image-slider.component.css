@@ -80,7 +80,7 @@
   border: 3px solid #e1e4e6;
   border-radius: 25px;
   padding: 12px 25px;
-  background-color: #FF6422;  /* Apply the requested background color */
+  background-color: #27548A;  /* Apply the requested background color */
   color: white;
   fill: white;
   line-height: 1;
@@ -102,7 +102,7 @@
 }
 
 .cta-button:hover {
-  background-color: #e55e1f; /* Darken the color slightly on hover */
+  background-color: #27548A; /* Darken the color slightly on hover */
 }
 
 /* Slider Controls */
@@ -110,7 +110,7 @@
   position: absolute;
   top: 50%;
   padding: 16px;
-  background-color: #e55e1f; /* Change background to #e55e1f */
+  background-color: #27548A; /* Change background to #27548A */
   color: white; /* White color for the arrows */
   border: none;
   font-size: 18px;

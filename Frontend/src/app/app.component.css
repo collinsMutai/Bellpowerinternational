@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #ff6422;
+  background-color: #27548A;
   color: white;
   border: none;
   padding: 10px; /* Increased padding for better button size */
@@ -29,7 +29,7 @@
 }
 
 .back-to-top:hover {
-  background-color: #ff6422;
+  background-color: #27548A;
 }
 
 @keyframes fadeIn {
