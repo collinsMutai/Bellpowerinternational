@@ -12,12 +12,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ImageGalleryComponent implements OnInit {
   images = [
-    { src: '/assets/gallery1.jpeg' },
-    { src: '/assets/gallery2.jpeg' },
-    { src: '/assets/gallery3.jpeg' },
-    { src: '/assets/gallery4.jpeg' },
-    { src: '/assets/gallery5.jpeg' },
-    { src: '/assets/gallery6.jpeg' },
+    {
+      src: '/assets/gallery1.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
+    {
+      src: '/assets/gallery2.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
+    {
+      src: '/assets/gallery3.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
+    {
+      src: '/assets/gallery4.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
+    {
+      src: '/assets/gallery5.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
+    {
+      src: '/assets/gallery6.jpeg',
+      description: 'The signing of Voi solar tenure project',
+    },
     {
       src: '/assets/Hydromechanicalequipments/hydromechanicalequipment_gallery1.jpeg',
       description: 'Hydro mechanical equipment',
@@ -102,6 +120,26 @@ export class ImageGalleryComponent implements OnInit {
       src: '/assets/Electricalcomponents/electricalcomponentsgallery8.jpeg',
       description: 'Electrical component',
     },
+    {
+      src: '/assets/solar_power_plant_voi_1.jpeg',
+      description: 'Solar power plant in Voi',
+    },
+    {
+      src: '/assets/solar_power_plant_voi_2.jpeg',
+      description: 'Solar power plant in Voi',
+    },
+    {
+      src: '/assets/solar_power_plant_voi_3.jpeg',
+      description: 'Solar power plant in Voi',
+    },
+    {
+      src: '/assets/solar_power_plant_voi_4.jpeg',
+      description: 'Solar power plant in Voi',
+    },
+    {
+      src: '/assets/solar_power_plant_voi_5.jpeg',
+      description: 'Solar power plant in Voi',
+    },
   ];
 
   filteredImages: any[] = [];
@@ -122,7 +160,6 @@ export class ImageGalleryComponent implements OnInit {
     if (this.section === '' || this.section === null) {
       this.filteredImages = this.images;
       console.log('this.filteredImages', this.filteredImages);
-      
     } else if (this.section === 'Electrical') {
       // If the section is "Electrical", show only Electrical components
       this.filteredImages = this.images.filter(
